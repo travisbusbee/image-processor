@@ -1,0 +1,28 @@
+{"config": {
+    "debug": "on",
+    "hardware": {
+        "array_origin_mm": 20.0,
+        "valve_spacing_mm": 8.0,
+        "array_offset_mm": 30.4,
+        "num_valves": 1,
+        "num_arrays": 2,
+        "valve_calibration_A": {
+            "valve1_cal": 7,
+            "valve2_cal": 7,
+            "valve3_cal": 7,
+            "valve4_cal": 7
+        },
+        "valve_calibration_B": {
+            "valve1_cal": 0,
+            "valve2_cal": 0,
+            "valve3_cal": 0,
+            "valve4_cal": 0
+        }
+    },
+    "print": { 
+        "name": "default",
+        "num_materials": 2,
+        "num_layers": 1,
+        "partial_blocks": true
+    }
+}}
