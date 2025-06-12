@@ -1,6 +1,6 @@
 # Image Processor
 
-A Python script that converts an input image into two binary bitmaps (stiff & soft materials) at precise DPIs.
+A Python script that converts a greyscale PNG input image into two binary bitmaps (stiff & soft materials) at precise DPIs.
 
 ## Features
 
@@ -23,16 +23,27 @@ pip install Pillow numpy
 
 ## Installation & Setup
 
+Before pushing or cloning, create an empty repository named `image-processor` under your GitHub account:  
+https://github.com/travisbusbee/image-processor
+
 1. **Clone the repository**
+
    ```bash
+   git clone https://github.com/travisbusbee/image-processor.git
+   cd image-processor
    ```
 
-git clone [https://github.com/your-username/image-processor.git](https://github.com/your-username/image-processor.git) cd image-processor
+2. **Verify filenames**
 
-````
+   - Ensure your script is named `image_processor.py`.
+   - If you accidentally committed it as `image_processor.py.py`, rename it:
 
-2. **Verify the script**
-   Ensure `image_processor.py` is present at the project root.
+     ```bash
+     git mv image_processor.py.py image_processor.py
+     git commit -m "Rename script to image_processor.py"
+     ```
+
+   - Ensure `README.md` (capital letters) is present at the project root.
 
 ## Usage
 
@@ -44,38 +55,45 @@ python image_processor.py \
   path/to/output_dir \
   --primary-dpi 63.5 \
   --secondary-dpi 31.75
-````
+```
 
-- ``: source image file.
-- ``: folder to receive `mat_01_<dpi>.bmp` and `mat_02_<dpi>.bmp`.
-- DPI flags accept decimals or fractions (`127/2`).
+- **`path/to/input.png`**: source image file.
+- **`path/to/output_dir`**: directory where BMPs will be saved.
+- DPI flags accept decimals or fractions (e.g., `127/2`).
+
+This produces:
+
+```
+output_dir/mat_01_63.5.bmp
+output_dir/mat_01_31.75.bmp
+output_dir/mat_02_63.5.bmp
+output_dir/mat_02_31.75.bmp
+```
 
 ## Contributing
 
 1. Fork this repo.
 2. Create a new branch:
+
    ```bash
+   git checkout -b feature/your-feature
    ```
 
-git checkout -b feature/your-feature
-
-````
 3. Commit your changes:
+
    ```bash
-git commit -m "Add feature X"
-````
+   git commit -m "Add feature X"
+   ```
 
 4. Push to your fork:
+
    ```bash
+   git push origin feature/your-feature
    ```
 
-git push origin feature/your-feature
-
-```
 5. Open a Pull Request against `main`.
 
 ## License
 
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-```
